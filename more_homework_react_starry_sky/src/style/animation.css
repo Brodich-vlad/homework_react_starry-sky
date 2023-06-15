@@ -1,0 +1,121 @@
+/* Анімація логотипу. */
+@keyframes showPulseLogo{
+    to{
+      box-shadow: 0 0 .35rem rgba(255, 255, 255, 0);
+    }
+    from{
+      box-shadow: 0 0 .35rem rgb(255, 255, 255);
+    }
+}
+/* Анімація заголовку. */
+@keyframes showTitle{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+/* Анімація стрілочки хедер. */
+@keyframes showBtnHeader{
+  20%,50%,80%,to{
+    transform: translateY(0)
+  }
+  40%{
+    transform: translateY(3.5rem)
+  }
+  70%{
+    transform: translateY(3rem)
+  }
+  90%{
+    transform: translateY(.5rem)
+  }
+}
+
+/* Анімація навігації хедер. */
+@keyframes showNavItem{
+    20%,50%,80%,to{
+      transform: translateY(6rem)
+    }
+    40%{
+      transform: translateY(2.5rem)
+    }
+    70%{
+      transform: translateY(2rem)
+    }
+    90%{
+      transform: translateY(.5rem)
+    }
+}
+
+/* Мерехтіння зірок блакитне. */
+@keyframes showPulseBlue {
+    0% {
+      background: #ffffff;
+      } 
+    50% {
+      background: #02d6fc;
+    }
+    100% {
+      background: #ffffff5e;
+    }
+}
+
+/* Мерехтіння зірок червоне. */
+@keyframes showPulseRed {
+    0% {
+      background: #ffffff;
+      } 
+    50% {
+      background: #fd0000e1;
+    }
+    100% {
+      background: #ffffffb6;
+    }
+}
+
+/* Обертання планети праворуч. */
+@keyframes spinRight {
+    to{
+      transform:rotate(0turn)
+    }
+    from {
+      transform:rotate(-1turn)
+    }
+}
+
+/* Обертання планети ліворуч. */
+@keyframes spinLeft {
+    to{
+      transform:rotate(0deg)
+    }
+    from {
+      transform:rotate(360deg)
+    }
+}
+/* Анімація стрілочки футур. */
+@keyframes showArrow{
+  0%{
+    width: 4rem;
+  }
+  20%,50%,80%,to{
+    transform: translateY(0);
+    width: 4rem;
+  }
+  40%{
+    transform: translateY(-2rem);
+    width: 4rem;
+  }
+  70%{
+    transform: translateY(-1.5rem);
+    width: 4rem;
+  }
+  90%{
+    transform: translateY(-.4rem);
+    width: 4rem;
+  }
+  100%{
+    width: 4rem;
+  }
+}

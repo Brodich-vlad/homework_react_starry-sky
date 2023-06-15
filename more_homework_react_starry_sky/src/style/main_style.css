@@ -1,0 +1,436 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('./reset.css');
+@import url('./animation.css');
+
+/* Змінні */
+:root{
+  --font-Russo-One: 'Russo One', sans-serif;
+  --font-style-normal: normal;
+  --font-weight-400: 400;
+  font-size: 10px;
+  --color-white:#ffffff;
+  --color-black:#000000;
+}
+
+
+/* Загальні стилі */
+a{
+  text-decoration: none;
+  font-style: normal;
+}
+body{
+  width: 100%;
+  font-family: var(--font-Russo-One);
+}
+
+.main-page{
+  max-width: 173rem;
+  min-height: 100vh;
+  max-height: 100vh;
+  color: var(--color-white);
+  margin: 0 auto;
+  background: url("../image/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+/* Хедер. */
+.header{
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+.header-nav{
+  display: flex;
+}
+.header-nav-item{
+  top: -50px;
+  margin: 2rem;
+  position: relative;
+  transition: all .3s;
+  z-index: 3;
+}
+
+/* Анімація навігвції фрейм №2. */
+.show-item-1{
+  animation: showNavItem 1s linear;
+  animation-fill-mode: forwards;
+  animation-delay: 500ms;
+}
+.show-item-2{
+  animation: showNavItem 1s linear;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+.show-item-3{
+  animation: showNavItem 1s linear;
+  animation-fill-mode: forwards;
+  animation-delay: 1.5s;
+}
+.show-item-4{
+  animation: showNavItem 1s linear;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+}
+.show-item-5{
+  animation: showNavItem 1s linear;
+  animation-fill-mode: forwards;
+  animation-delay: 2.5s;
+}
+
+.logo{
+  width: .4rem;
+  height: .4rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: 4rem;
+  z-index: 1;
+  transition: all .5s;
+  animation: showPulseLogo 2s infinite linear;
+  z-index: 3;
+}
+.logo > img{
+  display: block;
+  width: 100%;
+}
+.logo:hover{
+  transform: scale(30) translateY(25%) translateX(20%);
+}
+.header-nav-item > a{
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 86%;
+  color: var(--color-white);
+  padding: .5rem;
+  transition: all .3s;
+}
+.header-nav-item > a:hover{
+  color: #dfdbdbcc;
+  background-color: #272323;
+  padding: 1rem 0.5rem;
+  border-radius: .6rem;
+}
+.header-btn{
+  width: 4rem;
+  position: relative;
+  background: none;
+  display: none;
+}
+.header-btn > img{
+  display: block;
+  width: 100%;
+}
+
+/* Головний контент. */
+.main{
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Зоряне небо. */
+.stars{
+  width: 150%;
+  height: 150vh;
+  position: fixed;
+}
+/* Зоряне небо анімація ліворуч. */
+.spin-left-stars{
+  animation: spinLeft 172s infinite linear;
+}
+/* Зоряне небо анімація праворуч. */
+.spin-Right-stars{
+  animation: spinRight 172s infinite linear;
+}
+/* Зірка. */
+.star{
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+}
+/* Мерехтіння зірок блакитне. */
+.star-blue{
+  animation: showPulseBlue 4s linear infinite;
+}
+/* Мерехтіння зірок червоне. */
+.star-red{
+  animation: showPulseRed 2s linear infinite;
+}
+
+/* Головна планет. */
+.main-img{
+  width: 30%;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  z-index: 2;
+  cursor: pointer;
+  transition: all 1s;
+}
+
+.main-img img{
+  display: block;
+  width: 100%;
+}
+/* Стан планети фрейм .№2 */
+.showImg{
+  width: 55%;
+  transform:  translateX(70%);
+}
+/* Стан планети фрейм .№3 */
+.hide-main-img{
+  transform: translateY(-80%) translateX(85%) 
+}
+/* Обертання планети праворуч. */
+.spin-right{
+  animation: spinRight 54s infinite linear;
+}
+/* Обертання планети ліворуч. */
+.spin-left{
+  animation: spinLeft 54s infinite linear;
+}
+
+/*Секція контент. */
+.section-content{
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1%;
+  z-index: 1;
+}
+
+/*Секція контент заголовок. */
+.title{
+  font-size: 9.6rem;
+  line-height: 96%;
+  background: linear-gradient(180deg, #DADADA 53.44%, rgba(218, 218, 218, 0) 116.38%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  width: 50%;
+  position: absolute;
+  transform: translateX(0);
+  left: 5%;
+  opacity: 0;
+  transition: linear .35s;
+}
+/*Заголовок анімація фрейм №2. */
+.showTitle{
+  animation: showTitle 3s linear;
+  animation-fill-mode: forwards;
+  animation-delay: 3s;
+}
+/*Заголовок анімація фрейм №3. */
+.hide-title{
+  transform: translateX(-200%);
+}
+
+/*Фото фрейм №3. */
+.section-content-img{
+  width: 48%;
+  position: relative;
+  transform: translateX(-250%);
+  transition: linear 1s;
+}
+/*Текст фрейм №3. */
+.section-content-info{
+  width: 48%;
+  position: relative;
+  transform: translateX(250%);
+  transition: linear 1s;
+}
+.section-content-text{
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 0.9;
+}
+.section-content-title{
+  font-size: 4.7rem;
+  margin-bottom: 2rem;
+}
+
+/*Контент анімація фрейм №3. */
+.show-content{
+  display: block;
+  transform: translateX(0%);
+}
+
+
+.section-content-img img{
+  display: block;
+  width: 100%;
+}
+
+/* Підвал. */
+.footer{
+  width: 100%;
+  height: 7rem;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+}
+/* Підвал кнопка-стрілочка фрейм №2. */
+.footer-btn{
+  height: 7rem;
+  width: 0;
+  cursor: pointer;
+  background: none;
+}
+.footer-btn img{
+  display: block;
+  width: 100%;
+}
+.footer-btn:hover{
+  opacity: .6;
+}
+/* Анімація кнопка-стрілочка фрейм №2. */
+.show-btn{
+  animation: showArrow 1s linear infinite;
+  animation-delay: 4s;
+}
+
+/* Медіа запити адаптивності. */
+@media screen and (max-width: 992px){
+  :root{
+    font-size: 8px;
+  }
+  .main-img{
+    width: 50%;
+  }
+  .showImg{
+    width: 95%;
+    transform:  translateX(70%);
+  }
+  .hide-main-img{
+    transform: translateY(-80%) translateX(55%) 
+  }
+}
+
+@media screen and (max-width: 768px){
+  /*Максимальний розмір головної сторінки.*/
+  .main-page{
+    max-height: none;
+  }
+  .header{
+    justify-content: space-between;
+    width: 90%;
+  }
+
+  /* Кнопка навігаційного меню. */
+  .header-btn{
+    display: flex;
+    margin-top: 4rem;
+    z-index: 5;
+    cursor: pointer;
+    transform: translateY(-500%);
+  }
+  /* Анімація кнопки навігаційного меню. */
+  .show-header-btn{
+    animation: showBtnHeader 1s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 500ms;
+  }
+ /* Анімація кнопки навігаційного меню стан відчинено. */
+  .btn-open > img{
+    transform: rotate(180deg);
+  }
+  .header-btn:hover{
+    opacity: .6;
+  }
+
+  /* Навігаційне меню. */
+  .header-nav{
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-height: 0px;
+    overflow: hidden;
+    background: #2b29298c;
+    transition: all 1.5s;
+    z-index: 6;
+    align-items: center;
+  }
+  
+  .header-nav-item > a{
+    font-size: 4rem;
+    width: 100%;
+  }
+
+  .header-nav-item > a:hover{
+    color: #dfdbdbcc;
+    background-color: #272323;
+    padding: 1rem 8rem;
+    border-radius: .6rem;
+  }
+  /* Стан меню відчинено. */
+  .nav-open{
+    max-height: 100%;
+    cursor: pointer;
+  }
+
+  .main-img{
+    width: 70%;
+  }
+  /* Стан планети фрейм .№2 */
+  .showImg{
+    width: 175%;
+    transform: translateX(55%);
+    opacity: .35;
+  }
+  /* Стан планети фрейм .№3 */
+  .hide-main-img{
+    transform: translateY(-90%) translateX(35%) 
+  }
+
+  .title{
+    font-size: 8rem;
+    width: 90%;
+  }  
+  /*Заголовок анімація фрейм №2. */
+  .showTitle{
+    animation: showTitle 3s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+  }
+  /*Секція контент. */
+  .section-content{
+    width: 100%;
+    flex-direction: column;
+    transition: all 1s;
+  }
+  /*Фото та Текст фрейм №3. */
+  .section-content-img{
+    width:100%;
+    margin-bottom: 2rem;
+    max-height: 0;
+  }
+  .section-content-info{
+    width: 100%;
+    max-height: 0;
+  }
+  /*Контент анімація фрейм №3. */
+  .show-content{
+    max-height: 100%;
+    transform: translateX(0%);
+  }
+  /* Анімація кнопка-стрілочка фрейм №2. */
+  .show-btn{
+    animation: showArrow 1s linear infinite;
+    animation-delay: 2s;
+  }
+}
